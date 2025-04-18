@@ -12,7 +12,7 @@ function OperationButton({ type, children }) {
         classnames = 'bg-[#28B463] text-white';
     }
     return (
-        <div className={`${classnames} flex items-center justify-center`}>{children}</div>
+        <div className={`${classnames} flex items-center justify-center cursor-pointer p-4`}>{children}</div>
 
     )
 }
