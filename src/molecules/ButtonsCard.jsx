@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import NumberButton from '../atoms/NumberButton'
 import OperationButton from '../atoms/OperationButton'
 import ButtonsLayout from '../Layouts/ButtonsLayout'
+import { CalcContext } from '../context/CalculatorContext'
 
 function ButtonsCard() {
+    const [operations,setOperations,values,setValues] = useContext(CalcContext);
+
+    console.log(operations);
     return (
         <ButtonsLayout>
             <NumberButton>1</NumberButton>
