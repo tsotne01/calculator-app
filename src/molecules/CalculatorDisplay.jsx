@@ -4,14 +4,15 @@ import { CalcContext } from '../context/CalculatorContext';
 
 function CalculatorDisplay() {
     const [operations, setOperations, values, setValues] = useContext(CalcContext);
-    useEffect(()=>{
+    useEffect(() => {
         console.log("rerendered display!")
         console.log(values);
-    })
+        console.log(operations);
+    }, []);
     return (
         <DisplayLayout>
             {values.length == 0 && <span>Tab On Buttons To Start</span>}
-            {values && values.map((val,idx)=> <span key={idx}>{val}</span>)}
+            {values && values.map((val, idx) => <span key={idx}>{`${val} `} {operations[idx]}</span>)}
         </DisplayLayout>
     )
 }
