@@ -1,6 +1,6 @@
 import React from 'react'
 
-function OperationButton({ type, children }) {
+function OperationButton({ type, handler, children }) {
     let classnames;
     if (type === 'operator') {
         classnames = 'bg-[#FFA500] text-white';
@@ -12,7 +12,7 @@ function OperationButton({ type, children }) {
         classnames = 'bg-[#28B463] text-white';
     }
     return (
-        <div className={`${classnames} flex items-center justify-center cursor-pointer p-4`}>{children}</div>
+        <div onClick={handler} className={`${classnames} flex items-center justify-center cursor-pointer p-4`}>{children}</div>
 
     )
 }
